@@ -23,15 +23,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGaragePurchase", "Andr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageSale", "AndreGarageSale\AndreGarageSale.csproj", "{C3CB88CC-3748-444A-BD22-C0E42542C8DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreGarageBank", "AndreGarageBank\AndreGarageBank.csproj", "{0CAAED09-D5A1-4284-94B3-3EA2B1C68EBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageBank", "AndreGarageBank\AndreGarageBank.csproj", "{0CAAED09-D5A1-4284-94B3-3EA2B1C68EBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreGarageDriver", "AndreGarageDriver\AndreGarageDriver.csproj", "{B8A8FFD0-6F78-48CE-A741-FCAA3E1D9B8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageDriver", "AndreGarageDriver\AndreGarageDriver.csproj", "{B8A8FFD0-6F78-48CE-A741-FCAA3E1D9B8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreGarageFinancialPendency", "AndreGarageFinancialPendency\AndreGarageFinancialPendency.csproj", "{F1D5DA30-0CD9-4B1D-BDB8-EBF376DBF099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageFinancialPendency", "AndreGarageFinancialPendency\AndreGarageFinancialPendency.csproj", "{F1D5DA30-0CD9-4B1D-BDB8-EBF376DBF099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreGarageInsurance", "AndreGarageInsurance\AndreGarageInsurance.csproj", "{121E222D-A945-45D6-BC06-A8ADB47C9481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageInsurance", "AndreGarageInsurance\AndreGarageInsurance.csproj", "{121E222D-A945-45D6-BC06-A8ADB47C9481}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreGarageUseTerms", "AndreGarageUseTerms\AndreGarageUseTerms.csproj", "{A89C50AB-7CC2-4CF1-8E17-C6A6CB295D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageUseTerms", "AndreGarageUseTerms\AndreGarageUseTerms.csproj", "{A89C50AB-7CC2-4CF1-8E17-C6A6CB295D34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "v2AndreGarageTests", "v2AndreGarageTests\v2AndreGarageTests.csproj", "{AF062A3E-E8F2-4D8F-894B-0D3A60C18B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{A89C50AB-7CC2-4CF1-8E17-C6A6CB295D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A89C50AB-7CC2-4CF1-8E17-C6A6CB295D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A89C50AB-7CC2-4CF1-8E17-C6A6CB295D34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF062A3E-E8F2-4D8F-894B-0D3A60C18B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF062A3E-E8F2-4D8F-894B-0D3A60C18B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF062A3E-E8F2-4D8F-894B-0D3A60C18B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF062A3E-E8F2-4D8F-894B-0D3A60C18B67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
