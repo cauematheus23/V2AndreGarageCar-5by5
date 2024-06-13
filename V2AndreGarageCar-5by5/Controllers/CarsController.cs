@@ -34,7 +34,7 @@ namespace V2AndreGarageCar_5by5.Controllers
 
         // GET: api/Cars/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Car>> GetCar(string id)
+        public async Task<ActionResult<Car>> GetCarByPlate(string id)
         {
           if (_context.Car == null)
           {

@@ -21,7 +21,7 @@ namespace AndreGarageBank.Services
 
         public Bank Create(Bank bank)
         {
-            _bank.InsertOne(bank);
+         
             return bank;
         }
         public Bank Update(Bank bank) 

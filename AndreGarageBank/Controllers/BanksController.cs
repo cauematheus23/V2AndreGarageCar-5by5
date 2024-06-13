@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using RabbitMQ.Client;
 
 namespace AndreGarageBank.Controllers
 {
@@ -10,10 +11,14 @@ namespace AndreGarageBank.Controllers
     public class BanksController : ControllerBase
     {
         private readonly BankService _bankService;
+        private readonly BankRabbit _bankRabbit;
+        private readonly ConnectionFactory _factory;
 
-        public BanksController(BankService bank)
+        public BanksController(BankService bank,BankRabbit bankRabbit, ConnectionFactory factory)
         {
             _bankService = bank;
+            _bankRabbit = bankRabbit;
+            _factory = factory;
         }
 
         [HttpGet]
@@ -35,7 +40,8 @@ namespace AndreGarageBank.Controllers
         [HttpPost]
         public ActionResult<Bank> Create(Bank bank)
         {
-            _bankService.Create(bank);
+            _bankService.Create(_bankRabbit.PostBank(_factory,bank));
+
             return bank;
         }
         [HttpPut("{cnpj}")]
@@ -47,12 +53,9 @@ namespace AndreGarageBank.Controllers
             {
                 return NotFound();
             }
-
             _bankService.Update(bankIn);
-
             return NoContent();
         }
-
         [HttpDelete("{cnpj}")]
         public IActionResult Delete(string cnpj)
         {

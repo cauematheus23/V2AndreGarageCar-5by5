@@ -1,8 +1,3 @@
-using AndreGarageBank.Services;
-using AndreGarageBank.Utils;
-using Microsoft.Extensions.Options;
-using RabbitMQ.Client;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,15 +6,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.Configure<DataBaseSettings>(
-    builder.Configuration.GetSection(nameof(DataBaseSettings)));
 
-builder.Services.AddSingleton<IDataBaseSettings>(sp =>
-    sp.GetRequiredService<IOptions<DataBaseSettings>>().Value);
-
-builder.Services.AddSingleton<BankService>();
-builder.Services.AddSingleton<ConnectionFactory>();
-builder.Services.AddSingleton<BankRabbit>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
