@@ -26,7 +26,9 @@ using (var connection = factory.CreateConnection())
                 var returnBank = Encoding.UTF8.GetString(body);
                 var bank = JsonConvert.DeserializeObject<Bank>(returnBank);
                 Bank msg = new BankServiceConsumer().PostBank(bank).Result;
-                Console.WriteLine("Bank: " + msg.Name);
+                Bank SQL = new BankServiceConsumer().PostBankSQL(bank).Result;
+                Console.WriteLine("Mongo Bank: " + msg.Name);
+                Console.WriteLine("SQL Bank: " + SQL.Name);
             };
 
             channel.BasicConsume(queue: QUEUE_NAME,

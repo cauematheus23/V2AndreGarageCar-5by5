@@ -84,25 +84,25 @@ namespace AndreGarageSale.Controllers
 
         // POST: api/Sales
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Sale>> PostSale(SaleDTO dto)
-        {
-            Sale sale = new Sale(dto);
-            sale.Payment = await _context.Payment.FindAsync(dto.PaymentId);
-            sale.Employee = await _context.Employee.FindAsync(dto.EmployeeDocument);
-            sale.Client = await _context.Client.FindAsync(dto.ClientDocument);
-            sale.Car = await _context.Car.FindAsync(dto.CarPlate);
+        //[HttpPost]
+        //public async Task<ActionResult<Sale>> PostSale(SaleDTO dto)
+        //{
+        //    Sale sale = new Sale(dto);
+        //    sale.Payment = await _context.Payment.FindAsync(dto.PaymentId);
+        //    sale.Employee = await _context.Employee.FindAsync(dto.EmployeeDocument);
+        //    sale.Client = await _context.Client.FindAsync(dto.ClientDocument);
+        //    sale.Car = await _context.Car.FindAsync(dto.CarPlate);
 
 
-          if (_context.Sale == null)
-          {
-              return Problem("Entity set 'AndreGarageSaleContext.Sale'  is null.");
-          }
-            _context.Sale.Add(sale);
-            await _context.SaveChangesAsync();
+        //  if (_context.Sale == null)
+        //  {
+        //      return Problem("Entity set 'AndreGarageSaleContext.Sale'  is null.");
+        //  }
+        //    _context.Sale.Add(sale);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSale", new { id = sale.Id }, sale);
-        }
+        //    return CreatedAtAction("GetSale", new { id = sale.Id }, sale);
+        //}
 
         // DELETE: api/Sales/5
         [HttpDelete("{id}")]
@@ -122,6 +122,18 @@ namespace AndreGarageSale.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+        [HttpPost(Name = "PostAll")]
+        public async Task<ActionResult<Sale>> PostSaleAll(Sale sale)
+        {
+            if (_context.Sale == null)
+            {
+                return Problem("Entity set 'AndreGarageSaleContext.Sale'  is null.");
+            }
+            _context.Sale.Add(sale);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetSale", new { id = sale.Id }, sale);
         }
 
         private bool SaleExists(int id)

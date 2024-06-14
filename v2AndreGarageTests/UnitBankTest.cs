@@ -51,7 +51,7 @@ namespace v2AndreGarageTests
         {
             for (int i = 0; i < 10000; i++)
             {
-                var bank = new Bank { CNPJ = $"123{i}", Name = $"Bank {i}" };
+                var bank = new Bank { CNPJ = $"123{i}", Name = $"Bank {i}", FoundingDate = DateTime.Now };
                 Bank bankout = new BankServiceTest().PostBanks(bank).Result;
             }
             Assert.True(true);

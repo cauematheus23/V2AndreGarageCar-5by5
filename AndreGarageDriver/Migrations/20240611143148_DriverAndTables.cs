@@ -28,18 +28,18 @@ namespace AndreGarageDriver.Migrations
             //        table.PrimaryKey("PK_Adress", x => x.Id);
             //    });
 
-            migrationBuilder.CreateTable(
-                name: "Bank",
-                columns: table => new
-                {
-                    CNPJ = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FoundingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Bank", x => x.CNPJ);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Bank",
+            //    columns: table => new
+            //    {
+            //        CNPJ = table.Column<string>(type: "nvarchar(450)", nullable: false),
+            //        Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        FoundingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Bank", x => x.CNPJ);
+            //    });
 
             //migrationBuilder.CreateTable(
             //    name: "Boleto",

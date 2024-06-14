@@ -11,6 +11,7 @@ namespace Models
         public int ModelYear { get; set; }
         public int FabricationYear { get; set; }
         public string Color { get; set; }
+        public bool Sold { get; set; }
         public override string? ToString() => $"Placa: {Plate},\nNome: {Name},\nAno Modelo: {ModelYear},\nAno Fabricação: {FabricationYear},\nCor: {Color}";
     }
 }

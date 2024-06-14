@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,21 @@ namespace AndreGarageConsumerBank.Services
                 HttpResponseMessage respose = await BankServiceConsumer._httpClient.PostAsync("https://localhost:7163/api/SendBanks", content);
                 respose.EnsureSuccessStatusCode();
                 string bankReturn = await respose.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Bank>(bankReturn);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<Bank> PostBankSQL(Bank bank)
+        {
+            try
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(bank), Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await BankServiceConsumer._httpClient.PostAsync("https://localhost:7046/api/Banks", content);
+                response.EnsureSuccessStatusCode();
+                string bankReturn = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<Bank>(bankReturn);
             }
             catch (Exception)
