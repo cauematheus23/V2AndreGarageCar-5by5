@@ -1,5 +1,4 @@
-﻿
-using AndreGarageSendBank.Utils;
+﻿using AndreGarageSendBank.Utils;
 using Models;
 using MongoDB.Driver;
 

@@ -12,12 +12,15 @@ namespace v2AndreGarageTests.Services
     {
         private static readonly HttpClient _client = new HttpClient();
 
-        public async Task<BankServiceTest> PostBanks (Bank bank)
+        public async Task<Bank> PostBanks (Bank bank)
         {
             try
             {
                 var content = new StringContent(JsonConvert.SerializeObject(bank), Encoding.UTF8, "application/json");
-                HttpResponseMessage response = await _client.PostAsync("https://localhost:7002;http://localhost:5244", content);
+                HttpResponseMessage response = await _client.PostAsync("https://localhost:7002/api/Banks", content);
+                response.EnsureSuccessStatusCode();
+                string bankReturn = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Bank>(bankReturn);
             }
             catch (Exception)
             {

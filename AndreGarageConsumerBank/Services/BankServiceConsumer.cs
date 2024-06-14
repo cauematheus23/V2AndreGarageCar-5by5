@@ -17,7 +17,7 @@ namespace AndreGarageConsumerBank.Services
             try
             {
                 var content = new StringContent(JsonConvert.SerializeObject(bank), Encoding.UTF8, "application/json");
-                HttpResponseMessage respose = await _httpClient.PostAsync("https://localhost:7002/api/Banks", content);
+                HttpResponseMessage respose = await BankServiceConsumer._httpClient.PostAsync("https://localhost:7163/api/SendBanks", content);
                 respose.EnsureSuccessStatusCode();
                 string bankReturn = await respose.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<Bank>(bankReturn);

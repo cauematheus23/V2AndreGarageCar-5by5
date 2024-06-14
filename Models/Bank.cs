@@ -12,6 +12,7 @@ namespace Models
     public class Bank
     {
         [BsonId]
+        [Key]
         public string CNPJ { get; set; }    
         public string Name { get; set; }
         public DateTime FoundingDate { get; set; }

@@ -1,8 +1,9 @@
-using AndreGarageSendBank.Services;
-using AndreGarageSendBank.Utils;
-using Microsoft.Extensions.Options;
-
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using AndreGarageSendBankSQL.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AndreGarageSendBankSQLContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AndreGarageSendBankSQLContext") ?? throw new InvalidOperationException("Connection string 'AndreGarageSendBankSQLContext' not found.")));
 
 // Add services to the container.
 
@@ -11,13 +12,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.Configure<DataBaseSettings>(
-    builder.Configuration.GetSection(nameof(DataBaseSettings)));
-
-builder.Services.AddSingleton<IDataBaseSettings>(sp =>
-    sp.GetRequiredService<IOptions<DataBaseSettings>>().Value);
-
-builder.Services.AddSingleton<SendBankService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

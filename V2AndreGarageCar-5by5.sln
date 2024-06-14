@@ -35,9 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageUseTerms", "Andr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "v2AndreGarageTests", "v2AndreGarageTests\v2AndreGarageTests.csproj", "{AF062A3E-E8F2-4D8F-894B-0D3A60C18B67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreGarageConsumerBank", "AndreGarageConsumerBank\AndreGarageConsumerBank.csproj", "{B0A65046-76FA-4A33-B78B-6ED05B0A29A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageConsumerBank", "AndreGarageConsumerBank\AndreGarageConsumerBank.csproj", "{B0A65046-76FA-4A33-B78B-6ED05B0A29A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreGarageSendBank", "BankAPISendMongo\AndreGarageSendBank.csproj", "{D0ED688A-AA56-47A4-B7C1-52653CB737CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreGarageSendBank", "BankAPISendMongo\AndreGarageSendBank.csproj", "{D0ED688A-AA56-47A4-B7C1-52653CB737CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreGarageSendBankSQL", "AndreGarageSendBankSQL\AndreGarageSendBankSQL.csproj", "{70978827-E8E1-4EA5-BE7E-9208B8220D6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{D0ED688A-AA56-47A4-B7C1-52653CB737CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0ED688A-AA56-47A4-B7C1-52653CB737CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0ED688A-AA56-47A4-B7C1-52653CB737CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70978827-E8E1-4EA5-BE7E-9208B8220D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70978827-E8E1-4EA5-BE7E-9208B8220D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70978827-E8E1-4EA5-BE7E-9208B8220D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70978827-E8E1-4EA5-BE7E-9208B8220D6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

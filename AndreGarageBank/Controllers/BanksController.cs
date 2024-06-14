@@ -38,11 +38,11 @@ namespace AndreGarageBank.Controllers
             return bank;
         }
         [HttpPost]
-        public ActionResult<Bank> Create(Bank bank)
+        public IActionResult Create([FromBody]Bank bank)
         {
             _bankService.Create(_bankRabbit.PostBank(_factory,bank));
 
-            return bank;
+            return Accepted();
         }
         [HttpPut("{cnpj}")]
         public IActionResult Update(string cnpj, Bank bankIn)
